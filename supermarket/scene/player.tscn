@@ -222,12 +222,10 @@ collision_layer = 2
 script = ExtResource("1_hjaqi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=290241316]
-position = Vector2(2, -89)
 shape = SubResource("RectangleShape2D_jv1ba")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1857681310]
 texture_filter = 1
-position = Vector2(3, -91)
 sprite_frames = SubResource("SpriteFrames_jv1ba")
 animation = &"activation_down"
 
