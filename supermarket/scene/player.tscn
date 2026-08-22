@@ -230,6 +230,5 @@ sprite_frames = SubResource("SpriteFrames_jv1ba")
 animation = &"activation_down"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1840913227]
-zoom = Vector2(2, 2)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

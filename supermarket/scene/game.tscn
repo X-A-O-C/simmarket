@@ -115,3 +115,6 @@ tile_set = SubResource("TileSet_aai3x")
 
 [node name="Chest" parent="--- interactable objects ---" unique_id=526981174 instance=ExtResource("4_xwcet")]
 position = Vector2(126, -91)
+
+[node name="Chest2" parent="--- interactable objects ---" unique_id=382116633 instance=ExtResource("4_xwcet")]
+position = Vector2(128, -15)

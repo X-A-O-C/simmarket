@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8c2egk7h2o1n"]
 
 [ext_resource type="PackedScene" uid="uid://crai15mjvnsga" path="res://scene/interaction/interaction_area/interaction_area.tscn" id="1_fnl5d"]
+[ext_resource type="Script" uid="uid://dcx1q31dhuvv5" path="res://code/interaction/objects/chest.gd" id="1_hc2bs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ype"]
 size = Vector2(10, 10)
@@ -9,6 +10,7 @@ size = Vector2(10, 10)
 radius = 25.019993
 
 [node name="Chest" type="Area2D" unique_id=526981174]
+script = ExtResource("1_hc2bs")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1006266556]
 offset_right = 10.0
@@ -19,7 +21,8 @@ color = Color(0.3778023, 0.37565845, 0, 1)
 position = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_u0ype")
 
-[node name="InteractionArea" parent="CollisionShape2D" unique_id=297106394 instance=ExtResource("1_fnl5d")]
+[node name="InteractionArea" parent="." unique_id=297106394 instance=ExtResource("1_fnl5d")]
+position = Vector2(5, 5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/InteractionArea" unique_id=1216329815]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1216329815]
 shape = SubResource("CircleShape2D_u0ype")
