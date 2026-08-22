@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://4f488t0and6w" path="res://image/tileset.png" id="1_xwcet"]
 [ext_resource type="PackedScene" uid="uid://bk2l0q1p0phyp" path="res://scene/player.tscn" id="3_33cqm"]
 [ext_resource type="Texture2D" uid="uid://dng0er60a0uo" path="res://image/Longcloset.png" id="3_p1ry8"]
+[ext_resource type="PackedScene" uid="uid://b8c2egk7h2o1n" path="res://scene/interaction/objects/chest.tscn" id="4_xwcet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qpk70"]
 texture = ExtResource("1_xwcet")
@@ -17,41 +18,41 @@ script/source = "extends CharacterBody2D
 @export var speed: float = 150.0
 @onready var sprite: AnimatedSprite2D = $Sprite
 
-func _physics_process(delta: float) -> void:
-	var input_direction: Vector2 = Vector2.ZERO
-	if Input.is_key_pressed(KEY_A):
-		input_direction.x -= 1
-	if Input.is_key_pressed(KEY_D):
-		input_direction.x += 1
-	if Input.is_key_pressed(KEY_W):
-		input_direction.y -= 1
-	if Input.is_key_pressed(KEY_S):
-		input_direction.y += 1
-			
-	velocity = input_direction.normalized() * speed
-	_update_animation(input_direction)
-	move_and_slide() 
+func _physics_process(_delta: float) -> void:
+  var input_direction: Vector2 = Vector2.ZERO
+  if Input.is_key_pressed(KEY_A):
+    input_direction.x -= 1
+  if Input.is_key_pressed(KEY_D):
+    input_direction.x += 1
+  if Input.is_key_pressed(KEY_W):
+    input_direction.y -= 1
+  if Input.is_key_pressed(KEY_S):
+    input_direction.y += 1
+      
+  velocity = input_direction.normalized() * speed
+  _update_animation(input_direction)
+  move_and_slide() 
 # Called when the node enters the scene tree for the first time.
 func _update_animation(direction: Vector2) -> void:
-	if direction == Vector2.ZERO:
-		sprite.stop()
-		return
-	if Input.is_key_pressed(KEY_W):
-		sprite.play('walk_up')
-	if Input.is_key_pressed(KEY_S):
-		sprite.play('walk_down')
-	if Input.is_key_pressed(KEY_A):
-		sprite.play('walk_left')
-	if Input.is_key_pressed(KEY_D):
-		sprite.play('walk_right')
-		
+  if direction == Vector2.ZERO:
+    sprite.stop()
+    return
+  if Input.is_key_pressed(KEY_W):
+    sprite.play('walk_up')
+  if Input.is_key_pressed(KEY_S):
+    sprite.play('walk_down')
+  if Input.is_key_pressed(KEY_A):
+    sprite.play('walk_left')
+  if Input.is_key_pressed(KEY_D):
+    sprite.play('walk_right')
+    
 func _ready() -> void:
-	pass # Replace with function body.
+  pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(_delta: float) -> void:
+  pass
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ll5lq"]
@@ -94,7 +95,6 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ll5lq")
 
 [node name="Game" type="Node2D" unique_id=1227949281]
-position = Vector2(568, 394)
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=586809046]
 texture_filter = 1
@@ -110,3 +110,11 @@ texture_filter = 1
 position = Vector2(-145, 80)
 tile_map_data = PackedByteArray("AAAEAPD/AQAAAAAAAAAEAPH/AQAAAAEAAAAEAPL/AQAAAAIAAAAEAPP/AQAAAAMAAAAFAPD/AQABAAAAAAAFAPH/AQABAAEAAAAFAPL/AQABAAIAAAAFAPP/AQABAAMAAAAGAPD/AQAAAAAAAAAGAPH/AQAAAAEAAAAGAPL/AQAAAAIAAAAGAPP/AQAAAAMAAAAHAPD/AQABAAAAAAAHAPH/AQABAAEAAAAHAPL/AQABAAIAAAAHAPP/AQABAAMAAAAIAPD/AQAAAAAAAAAIAPH/AQAAAAEAAAAIAPL/AQAAAAIAAAAIAPP/AQAAAAMAAAAJAPD/AQABAAAAAAAJAPH/AQABAAEAAAAJAPL/AQABAAIAAAAJAPP/AQABAAMAAAAKAPD/AQAAAAAAAAAKAPH/AQAAAAEAAAAKAPL/AQAAAAIAAAAKAPP/AQAAAAMAAAALAPD/AQABAAAAAAALAPH/AQABAAEAAAALAPL/AQABAAIAAAALAPP/AQABAAMAAAAMAPD/AQAAAAAAAAAMAPH/AQAAAAEAAAAMAPL/AQAAAAIAAAAMAPP/AQAAAAMAAAANAPD/AQABAAAAAAANAPH/AQABAAEAAAANAPL/AQABAAIAAAANAPP/AQABAAMAAAA=")
 tile_set = SubResource("TileSet_aai3x")
+
+[node name="--- interactable objects ---" type="Node2D" parent="." unique_id=123861773]
+
+[node name="Chest" parent="--- interactable objects ---" unique_id=526981174 instance=ExtResource("4_xwcet")]
+position = Vector2(126, -91)
+
+[node name="Chest2" parent="--- interactable objects ---" unique_id=382116633 instance=ExtResource("4_xwcet")]
+position = Vector2(128, -15)
