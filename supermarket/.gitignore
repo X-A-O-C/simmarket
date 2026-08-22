@@ -1,0 +1,54 @@
+# ==========================================
+# Godot 4+ Specific Ignores
+# ==========================================
+.godot/
+.nomedia
+
+# ==========================================
+# Godot 3 Specific Ignores
+# ==========================================
+.import/
+
+# ==========================================
+# Build & Export Configurations
+# ==========================================
+# Ignore local export configs which might contain private paths or keys
+export.cfg
+export_credentials.cfg
+
+# OPTIONAL: Uncomment the line below if your presets contain sensitive Android/iOS keystore keys.
+# Otherwise, keep it tracked so your team shares build presets.
+# export_presets.cfg
+
+# Generated translation files (if using CSVs for localization)
+*.translation
+
+# ==========================================
+# Mono / C# Specific Ignores
+# ==========================================
+.mono/
+data_*/
+mono_crash.*.json
+
+# ==========================================
+# System & OS Files
+# ==========================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.nfs*
+
+*.tmp
