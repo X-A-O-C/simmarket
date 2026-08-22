@@ -1,0 +1,112 @@
+[gd_scene format=4 uid="uid://ds8q272b5jfs2"]
+
+[ext_resource type="Texture2D" uid="uid://4f488t0and6w" path="res://image/tileset.png" id="1_xwcet"]
+[ext_resource type="PackedScene" uid="uid://bk2l0q1p0phyp" path="res://scene/player.tscn" id="3_33cqm"]
+[ext_resource type="Texture2D" uid="uid://dng0er60a0uo" path="res://image/Longcloset.png" id="3_p1ry8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qpk70"]
+texture = ExtResource("1_xwcet")
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_t8bkv"]
+sources/0 = SubResource("TileSetAtlasSource_qpk70")
+
+[sub_resource type="GDScript" id="GDScript_xwcet"]
+script/source = "extends CharacterBody2D
+
+@export var speed: float = 150.0
+@onready var sprite: AnimatedSprite2D = $Sprite
+
+func _physics_process(delta: float) -> void:
+	var input_direction: Vector2 = Vector2.ZERO
+	if Input.is_key_pressed(KEY_A):
+		input_direction.x -= 1
+	if Input.is_key_pressed(KEY_D):
+		input_direction.x += 1
+	if Input.is_key_pressed(KEY_W):
+		input_direction.y -= 1
+	if Input.is_key_pressed(KEY_S):
+		input_direction.y += 1
+			
+	velocity = input_direction.normalized() * speed
+	_update_animation(input_direction)
+	move_and_slide() 
+# Called when the node enters the scene tree for the first time.
+func _update_animation(direction: Vector2) -> void:
+	if direction == Vector2.ZERO:
+		sprite.stop()
+		return
+	if Input.is_key_pressed(KEY_W):
+		sprite.play('walk_up')
+	if Input.is_key_pressed(KEY_S):
+		sprite.play('walk_down')
+	if Input.is_key_pressed(KEY_A):
+		sprite.play('walk_left')
+	if Input.is_key_pressed(KEY_D):
+		sprite.play('walk_right')
+		
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ll5lq"]
+texture = ExtResource("3_p1ry8")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_aai3x"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_ll5lq")
+
+[node name="Game" type="Node2D" unique_id=1227949281]
+position = Vector2(568, 394)
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=586809046]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD9//r/AAAAAAEAAAD+//r/AAAAAAEAAAD+//n/AAAAAAEAAAD9//n/AAAAAAEAAAD+//j/AAAAAAEAAAD9//j/AAAAAAEAAAD8//j/AAAAAAEAAAD8//n/AAAAAAEAAAD8//r/AAAAAAEAAAD///r/AAAAAAEAAAD///n/AAAAAAEAAAD///j/AAAAAAEAAAAAAPj/AAAAAAEAAAAAAPn/AAAAAAEAAAAAAPr/AAAAAAEAAAABAPr/AAAAAAEAAAABAPv/AAAAAAEAAAAAAPv/AAAAAAEAAAD///v/AAAAAAEAAAD+//v/AAAAAAEAAAD9//v/AAAAAAEAAAD8//v/AAAAAAEAAAD8//z/AAAAAAEAAAD9//z/AAAAAAEAAAD+//z/AAAAAAEAAAD+//3/AAAAAAEAAAD///z/AAAAAAEAAAAAAPz/AAAAAAEAAAABAPz/AAAAAAEAAAACAPz/AAAAAAEAAAACAPv/AAAAAAEAAAACAPr/AAAAAAEAAAACAPn/AAAAAAEAAAABAPn/AAAAAAEAAAACAPj/AAAAAAEAAAABAPj/AAAAAAEAAAD8//3/AAAAAAEAAAD9//3/AAAAAAEAAAD///3/AAAAAAEAAAAAAP3/AAAAAAEAAAABAP3/AAAAAAEAAAACAP3/AAAAAAEAAAADAP3/AAAAAAEAAAADAPz/AAAAAAEAAAADAPv/AAAAAAEAAAADAPr/AAAAAAEAAAADAPn/AAAAAAEAAAADAPj/AAAAAAEAAAADAPf/AAAAAAEAAAACAPf/AAAAAAEAAAABAPf/AAAAAAEAAAAAAPf/AAAAAAEAAAD///f/AAAAAAEAAAD+//f/AAAAAAEAAAD9//f/AAAAAAEAAAD8//f/AAAAAAEAAAD7//f/AAAAAAEAAAD7//j/AAAAAAEAAAD7//n/AAAAAAEAAAD7//r/AAAAAAEAAAD7//v/AAAAAAEAAAD7//z/AAAAAAEAAAD7//3/AAAAAAEAAAAEAP3/AAAAAAEAAAAEAPz/AAAAAAEAAAAEAPv/AAAAAAEAAAAEAPr/AAAAAAEAAAAEAPn/AAAAAAEAAAAEAPj/AAAAAAEAAAAEAPf/AAAAAAEAAAAEAP7/AAAAAAEAAAADAP7/AAAAAAEAAAACAP7/AAAAAAEAAAABAP7/AAAAAAEAAAAAAP7/AAAAAAEAAAD///7/AAAAAAEAAAD+//7/AAAAAAEAAAD9//7/AAAAAAEAAAD8//7/AAAAAAEAAAD7//7/AAAAAAEAAAA=")
+tile_set = SubResource("TileSet_t8bkv")
+
+[node name="Player" parent="." unique_id=1839408827 instance=ExtResource("3_33cqm")]
+position = Vector2(-2, 1)
+script = SubResource("GDScript_xwcet")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=24894228]
+texture_filter = 1
+position = Vector2(-145, 80)
+tile_map_data = PackedByteArray("AAAEAPD/AQAAAAAAAAAEAPH/AQAAAAEAAAAEAPL/AQAAAAIAAAAEAPP/AQAAAAMAAAAFAPD/AQABAAAAAAAFAPH/AQABAAEAAAAFAPL/AQABAAIAAAAFAPP/AQABAAMAAAAGAPD/AQAAAAAAAAAGAPH/AQAAAAEAAAAGAPL/AQAAAAIAAAAGAPP/AQAAAAMAAAAHAPD/AQABAAAAAAAHAPH/AQABAAEAAAAHAPL/AQABAAIAAAAHAPP/AQABAAMAAAAIAPD/AQAAAAAAAAAIAPH/AQAAAAEAAAAIAPL/AQAAAAIAAAAIAPP/AQAAAAMAAAAJAPD/AQABAAAAAAAJAPH/AQABAAEAAAAJAPL/AQABAAIAAAAJAPP/AQABAAMAAAAKAPD/AQAAAAAAAAAKAPH/AQAAAAEAAAAKAPL/AQAAAAIAAAAKAPP/AQAAAAMAAAALAPD/AQABAAAAAAALAPH/AQABAAEAAAALAPL/AQABAAIAAAALAPP/AQABAAMAAAAMAPD/AQAAAAAAAAAMAPH/AQAAAAEAAAAMAPL/AQAAAAIAAAAMAPP/AQAAAAMAAAANAPD/AQABAAAAAAANAPH/AQABAAEAAAANAPL/AQABAAIAAAANAPP/AQABAAMAAAA=")
+tile_set = SubResource("TileSet_aai3x")

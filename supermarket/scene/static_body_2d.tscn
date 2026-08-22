@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://h7a4vojw7bl4"]
+
+[ext_resource type="Script" uid="uid://dnnuyn8s7it04" path="res://scene/static_body_2d.gd" id="1_8bt55"]
+[ext_resource type="Texture2D" uid="uid://001gtlaxn1n7" path="res://image/closet.png" id="1_ecape"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv1cr"]
+atlas = ExtResource("1_ecape")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haylg"]
+atlas = ExtResource("1_ecape")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_745k4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv1cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haylg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jv1ba"]
+radius = 20.024984
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6h3x"]
+size = Vector2(16, 21)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=765152759]
+script = ExtResource("1_8bt55")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=64514789]
+texture_filter = 1
+position = Vector2(60, -99)
+sprite_frames = SubResource("SpriteFrames_745k4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1562180572]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1225703748]
+position = Vector2(60, -94)
+shape = SubResource("CircleShape2D_jv1ba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1844446629]
+position = Vector2(60, -93.5)
+shape = SubResource("RectangleShape2D_x6h3x")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
