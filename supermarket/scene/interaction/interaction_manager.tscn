@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://vf5jow7crtqk"]
+
+[ext_resource type="Script" uid="uid://dwsk7krtk011u" path="res://code/interaction/interaction_manager.gd" id="1_bisbg"]
+
+[node name="InteractionManager" type="Node2D" unique_id=1369793529]
+script = ExtResource("1_bisbg")
+
+[node name="Label" type="Label" parent="." unique_id=1757428581]
+z_index = 20
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "[E] INTERACT"
+horizontal_alignment = 1
+vertical_alignment = 1

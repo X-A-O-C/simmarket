@@ -8,12 +8,12 @@ func get_input():
   input_direction = Input.get_vector("left", "right", "up", "down")
   velocity = input_direction * speed
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
   get_input()	
-  _update_animation()
+  update_animation()
   move_and_slide() 
-# Called when the node enters the scene tree for the first time.
-func _update_animation() -> void:
+
+func update_animation() -> void:
   if input_direction == Vector2.ZERO:
     sprite.stop()
     return
@@ -40,5 +40,5 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
   pass
