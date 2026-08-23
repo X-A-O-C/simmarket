@@ -26,14 +26,14 @@ func update_animation() -> void:
   if input_direction.x > 0:
     sprite.play('walk_right')
 '''	if input_direction.y < 0 and Input.is_action_just_pressed('E'):
-		sprite.play('activation_up')
-	if input_direction.y > 0 and Input.is_action_just_pressed('Activate'):
-		sprite.play('activation_down')
-	if input_direction.x < 0 and Input.is_action_just_pressed('Activate'):
-		sprite.play('activation_left')
-	if input_direction.x > 0 and Input.is_action_just_pressed('Activate'):
-		sprite.play('activation_right')
-	'''
+    sprite.play('activation_up')
+  if input_direction.y > 0 and Input.is_action_just_pressed('Activate'):
+    sprite.play('activation_down')
+  if input_direction.x < 0 and Input.is_action_just_pressed('Activate'):
+    sprite.play('activation_left')
+  if input_direction.x > 0 and Input.is_action_just_pressed('Activate'):
+    sprite.play('activation_right')
+  '''
 
 func _ready() -> void:
   pass # Replace with function body.
