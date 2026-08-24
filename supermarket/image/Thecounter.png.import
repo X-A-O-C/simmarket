@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://01qke8q8v21y"
-path="res://.godot/imported/assetsmini.png-83b3f6763083fd5c36ff4c59c952ab1b.ctex"
+uid="uid://eyimcl58pu4q"
+path="res://.godot/imported/Thecounter.png-63626a25bbd53514010084d742193a3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/assetsmini.png"
-dest_files=["res://.godot/imported/assetsmini.png-83b3f6763083fd5c36ff4c59c952ab1b.ctex"]
+source_file="res://image/Thecounter.png"
+dest_files=["res://.godot/imported/Thecounter.png-63626a25bbd53514010084d742193a3f.ctex"]
 
 [params]
 
