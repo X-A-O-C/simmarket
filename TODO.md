@@ -1,10 +1,13 @@
 ### art
-- fix / create unified spritesheets
-  - make each frame in a spritesheet exactly the same width and height
 - upload Asperite assets
   - upload Asperite files to root or make some `/assets` so we have original Asperite files and any pngs go to `supermarket/image/`
 
 ### code
-- lamp interact
+[x] lamp interact
   - create window where player selects color light (warm, cold, off) 
   - light is emitted in a radius
+```
+to add real lighting added a CanvasModulate to the game.tscn. can play around with the default color there, 
+
+i set it to a default low blue so that the light would show a lot but change it as needed 
+```
