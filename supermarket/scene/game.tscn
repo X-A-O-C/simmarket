@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bk2l0q1p0phyp" path="res://scene/player.tscn" id="3_33cqm"]
 [ext_resource type="Texture2D" uid="uid://dng0er60a0uo" path="res://image/Longcloset.png" id="3_p1ry8"]
 [ext_resource type="PackedScene" uid="uid://b8c2egk7h2o1n" path="res://scene/interaction/objects/chest.tscn" id="4_xwcet"]
+[ext_resource type="PackedScene" uid="uid://cuji1fbr88ypt" path="res://scene/interaction/objects/lamp.tscn" id="5_p1ry8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qpk70"]
 texture = ExtResource("1_xwcet")
@@ -118,3 +119,6 @@ position = Vector2(126, -91)
 
 [node name="Chest2" parent="--- interactable objects ---" unique_id=382116633 instance=ExtResource("4_xwcet")]
 position = Vector2(128, -15)
+
+[node name="Lamp" parent="--- interactable objects ---" unique_id=2124581148 instance=ExtResource("5_p1ry8")]
+position = Vector2(-95, 25)

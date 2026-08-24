@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cuji1fbr88ypt"]
+
+[ext_resource type="Texture2D" uid="uid://cv24lrn4qwwom" path="res://image/assetsmini.png" id="1_n3k36"]
+[ext_resource type="Script" uid="uid://cku5stp7y652g" path="res://code/interaction/objects/lamp.gd" id="1_o3ayv"]
+[ext_resource type="PackedScene" uid="uid://crai15mjvnsga" path="res://scene/interaction/interaction_area/interaction_area.tscn" id="2_o3ayv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p18sj"]
+atlas = ExtResource("1_n3k36")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms8w5"]
+atlas = ExtResource("1_n3k36")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7ki5"]
+atlas = ExtResource("1_n3k36")
+region = Rect2(32, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jpig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p18sj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms8w5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7ki5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u0ype"]
+radius = 26.019224
+
+[node name="Lamp" type="Node2D" unique_id=2124581148]
+script = ExtResource("1_o3ayv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2095697052]
+sprite_frames = SubResource("SpriteFrames_8jpig")
+
+[node name="InteractionArea" parent="." unique_id=297106394 instance=ExtResource("2_o3ayv")]
+action_name = "choose light"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=2084060642]
+shape = SubResource("CircleShape2D_u0ype")
