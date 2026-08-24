@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8c2egk7h2o1n"]
 
 [ext_resource type="PackedScene" uid="uid://crai15mjvnsga" path="res://scene/interaction/interaction_area/interaction_area.tscn" id="1_fnl5d"]
-[ext_resource type="Script" uid="uid://dcx1q31dhuvv5" path="res://code/interaction/objects/chest.gd" id="1_hc2bs"]
+[ext_resource type="Script" uid="uid://dcx1q31dhuvv5" path="res://scripts/interaction/objects/chest.gd" id="1_hc2bs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ype"]
 size = Vector2(10, 10)

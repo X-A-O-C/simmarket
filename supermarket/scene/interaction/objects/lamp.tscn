@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cuji1fbr88ypt"]
 
 [ext_resource type="Texture2D" uid="uid://cv24lrn4qwwom" path="res://image/assetsmini.png" id="1_n3k36"]
-[ext_resource type="Script" uid="uid://cku5stp7y652g" path="res://code/interaction/objects/lamp.gd" id="1_o3ayv"]
+[ext_resource type="Script" uid="uid://cku5stp7y652g" path="res://scripts/interaction/objects/lamp.gd" id="1_o3ayv"]
 [ext_resource type="PackedScene" uid="uid://crai15mjvnsga" path="res://scene/interaction/interaction_area/interaction_area.tscn" id="2_o3ayv"]
+[ext_resource type="PackedScene" uid="uid://cst6xts1ecjoj" path="res://scene/ui/light_select.tscn" id="4_p18sj"]
+[ext_resource type="Texture2D" uid="uid://boon777vgc4fr" path="res://image/light_gradient.tres" id="5_ms8w5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p18sj"]
 atlas = ExtResource("1_n3k36")
@@ -47,3 +49,23 @@ action_name = "choose light"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=2084060642]
 shape = SubResource("CircleShape2D_u0ype")
+
+[node name="WarmLight" type="PointLight2D" parent="." unique_id=1212489296]
+color = Color(1, 0.95686275, 0, 1)
+energy = 1.2
+texture = ExtResource("5_ms8w5")
+texture_scale = 0.5
+
+[node name="ColdLight" type="PointLight2D" parent="." unique_id=1132977917]
+color = Color(0.6901961, 0.75686276, 1, 1)
+energy = 1.2
+texture = ExtResource("5_ms8w5")
+texture_scale = 0.5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=535365537]
+
+[node name="LightSelect" parent="CanvasLayer" unique_id=220735320 instance=ExtResource("4_p18sj")]
+offset_left = 10.0
+offset_top = -10.0
+offset_right = 97.0
+offset_bottom = 21.0
