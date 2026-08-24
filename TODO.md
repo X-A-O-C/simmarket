@@ -1,5 +1,6 @@
 ### art
-- upload Asperite assets
+[] decide if we're using current pixel size or if we're doubling scale on all pixel assets
+[] upload Asperite assets
   - upload Asperite files to root or make some `/assets` so we have original Asperite files and any pngs go to `supermarket/image/`
 
 ### code
