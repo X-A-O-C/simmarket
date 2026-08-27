@@ -1,17 +1,15 @@
 [gd_scene format=4 uid="uid://ds8q272b5jfs2"]
 
-[ext_resource type="Texture2D" uid="uid://4f488t0and6w" path="res://image/tileset.png" id="1_xwcet"]
+[ext_resource type="Texture2D" uid="uid://d227df11qmfc4" path="res://image/tileset.png" id="1_xwcet"]
 [ext_resource type="PackedScene" uid="uid://bk2l0q1p0phyp" path="res://scene/player.tscn" id="3_33cqm"]
-[ext_resource type="Texture2D" uid="uid://dng0er60a0uo" path="res://image/Longcloset.png" id="3_p1ry8"]
-[ext_resource type="PackedScene" uid="uid://b8c2egk7h2o1n" path="res://scene/interaction/objects/chest.tscn" id="4_xwcet"]
-[ext_resource type="PackedScene" uid="uid://cuji1fbr88ypt" path="res://scene/interaction/objects/lamp.tscn" id="5_p1ry8"]
+[ext_resource type="PackedScene" uid="uid://bhwo1yodsfo2b" path="res://scene/interaction/objects/scene_change.tscn" id="3_xwcet"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qpk70"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dbls1"]
 texture = ExtResource("1_xwcet")
 0:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_t8bkv"]
-sources/0 = SubResource("TileSetAtlasSource_qpk70")
+sources/0 = SubResource("TileSetAtlasSource_dbls1")
 
 [sub_resource type="GDScript" id="GDScript_xwcet"]
 script/source = "extends CharacterBody2D
@@ -56,45 +54,6 @@ func _process(_delta: float) -> void:
   pass
 "
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ll5lq"]
-texture = ExtResource("3_p1ry8")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
-1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
-1:3/0 = 0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, -8, -8, -8, -8, 8, 8, 8)
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_aai3x"]
-physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_ll5lq")
-
 [node name="Game" type="Node2D" unique_id=1227949281]
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=586809046]
@@ -106,22 +65,9 @@ tile_set = SubResource("TileSet_t8bkv")
 position = Vector2(-2, 1)
 script = SubResource("GDScript_xwcet")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=24894228]
-texture_filter = 1
-position = Vector2(-145, 80)
-tile_map_data = PackedByteArray("AAAEAPD/AQAAAAAAAAAEAPH/AQAAAAEAAAAEAPL/AQAAAAIAAAAEAPP/AQAAAAMAAAAFAPD/AQABAAAAAAAFAPH/AQABAAEAAAAFAPL/AQABAAIAAAAFAPP/AQABAAMAAAAGAPD/AQAAAAAAAAAGAPH/AQAAAAEAAAAGAPL/AQAAAAIAAAAGAPP/AQAAAAMAAAAHAPD/AQABAAAAAAAHAPH/AQABAAEAAAAHAPL/AQABAAIAAAAHAPP/AQABAAMAAAAIAPD/AQAAAAAAAAAIAPH/AQAAAAEAAAAIAPL/AQAAAAIAAAAIAPP/AQAAAAMAAAAJAPD/AQABAAAAAAAJAPH/AQABAAEAAAAJAPL/AQABAAIAAAAJAPP/AQABAAMAAAAKAPD/AQAAAAAAAAAKAPH/AQAAAAEAAAAKAPL/AQAAAAIAAAAKAPP/AQAAAAMAAAALAPD/AQABAAAAAAALAPH/AQABAAEAAAALAPL/AQABAAIAAAALAPP/AQABAAMAAAAMAPD/AQAAAAAAAAAMAPH/AQAAAAEAAAAMAPL/AQAAAAIAAAAMAPP/AQAAAAMAAAANAPD/AQABAAAAAAANAPH/AQABAAEAAAANAPL/AQABAAIAAAANAPP/AQABAAMAAAA=")
-tile_set = SubResource("TileSet_aai3x")
-
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1915637598]
 color = Color(0.3529412, 0.3529412, 0.47843137, 1)
 
-[node name="--- interactable objects ---" type="Node2D" parent="." unique_id=123861773]
-
-[node name="Chest" parent="--- interactable objects ---" unique_id=526981174 instance=ExtResource("4_xwcet")]
-position = Vector2(126, -91)
-
-[node name="Chest2" parent="--- interactable objects ---" unique_id=382116633 instance=ExtResource("4_xwcet")]
-position = Vector2(128, -15)
-
-[node name="Lamp" parent="--- interactable objects ---" unique_id=2124581148 instance=ExtResource("5_p1ry8")]
-position = Vector2(-15, -67)
+[node name="SceneChange" parent="." unique_id=526981174 instance=ExtResource("3_xwcet")]
+position = Vector2(101, -2)
+target_scene = "uid://dhk6veiy41v20"

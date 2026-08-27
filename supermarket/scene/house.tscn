@@ -1,0 +1,101 @@
+[gd_scene format=4 uid="uid://dhk6veiy41v20"]
+
+[ext_resource type="PackedScene" uid="uid://bk2l0q1p0phyp" path="res://scene/player.tscn" id="1_3bjdp"]
+[ext_resource type="Texture2D" uid="uid://d227df11qmfc4" path="res://image/tileset.png" id="2_52fq0"]
+[ext_resource type="Texture2D" uid="uid://bs2vl0tyhf5ol" path="res://image/tablehome.png" id="4_qg36w"]
+[ext_resource type="PackedScene" uid="uid://cuji1fbr88ypt" path="res://scene/interaction/objects/lamp.tscn" id="5_52fq0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g7cke"]
+texture = ExtResource("2_52fq0")
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1mg4w"]
+sources/0 = SubResource("TileSetAtlasSource_g7cke")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7v54d"]
+texture = ExtResource("4_qg36w")
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_u0ype"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_7v54d")
+
+[sub_resource type="GDScript" id="GDScript_66jkb"]
+script/source = "extends CharacterBody2D
+
+@export var speed: float = 150.0
+@onready var sprite: AnimatedSprite2D = $Sprite
+
+func _physics_process(_delta: float) -> void:
+  var input_direction: Vector2 = Vector2.ZERO
+  if Input.is_key_pressed(KEY_A):
+    input_direction.x -= 1
+  if Input.is_key_pressed(KEY_D):
+    input_direction.x += 1
+  if Input.is_key_pressed(KEY_W):
+    input_direction.y -= 1
+  if Input.is_key_pressed(KEY_S):
+    input_direction.y += 1
+      
+  velocity = input_direction.normalized() * speed
+  _update_animation(input_direction)
+  move_and_slide() 
+# Called when the node enters the scene tree for the first time.
+func _update_animation(direction: Vector2) -> void:
+  if direction == Vector2.ZERO:
+    sprite.stop()
+    return
+  if Input.is_key_pressed(KEY_W):
+    sprite.play('walk_up')
+  if Input.is_key_pressed(KEY_S):
+    sprite.play('walk_down')
+  if Input.is_key_pressed(KEY_A):
+    sprite.play('walk_left')
+  if Input.is_key_pressed(KEY_D):
+    sprite.play('walk_right')
+    
+func _ready() -> void:
+  pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+  pass
+"
+
+[node name="Node2D" type="Node2D" unique_id=941730340]
+
+[node name="TileMaps" type="Node2D" parent="." unique_id=490706851]
+
+[node name="floor" type="TileMapLayer" parent="TileMaps" unique_id=49959878]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD9//r/AAAAAAEAAAD+//r/AAAAAAEAAAD+//n/AAAAAAEAAAD9//n/AAAAAAEAAAD+//j/AAAAAAEAAAD9//j/AAAAAAEAAAD8//j/AAAAAAEAAAD8//n/AAAAAAEAAAD8//r/AAAAAAEAAAD///r/AAAAAAEAAAD///n/AAAAAAEAAAD///j/AAAAAAEAAAAAAPj/AAAAAAEAAAAAAPn/AAAAAAEAAAAAAPr/AAAAAAEAAAABAPr/AAAAAAEAAAABAPv/AAAAAAEAAAAAAPv/AAAAAAEAAAD///v/AAAAAAEAAAD+//v/AAAAAAEAAAD9//v/AAAAAAEAAAD8//v/AAAAAAEAAAD8//z/AAAAAAEAAAD9//z/AAAAAAEAAAD+//z/AAAAAAEAAAD+//3/AAAAAAEAAAD///z/AAAAAAEAAAAAAPz/AAAAAAEAAAABAPz/AAAAAAEAAAACAPz/AAAAAAEAAAACAPv/AAAAAAEAAAACAPr/AAAAAAEAAAACAPn/AAAAAAEAAAABAPn/AAAAAAEAAAACAPj/AAAAAAEAAAABAPj/AAAAAAEAAAD8//3/AAAAAAEAAAD9//3/AAAAAAEAAAD///3/AAAAAAEAAAAAAP3/AAAAAAEAAAABAP3/AAAAAAEAAAACAP3/AAAAAAEAAAADAP3/AAAAAAEAAAADAPz/AAAAAAEAAAADAPv/AAAAAAEAAAADAPr/AAAAAAEAAAADAPn/AAAAAAEAAAADAPj/AAAAAAEAAAADAPf/AAAAAAEAAAACAPf/AAAAAAEAAAABAPf/AAAAAAEAAAAAAPf/AAAAAAEAAAD///f/AAAAAAEAAAD+//f/AAAAAAEAAAD9//f/AAAAAAEAAAD8//f/AAAAAAEAAAD7//f/AAAAAAEAAAD7//j/AAAAAAEAAAD7//n/AAAAAAEAAAD7//r/AAAAAAEAAAD7//v/AAAAAAEAAAD7//z/AAAAAAEAAAD7//3/AAAAAAEAAAAEAP3/AAAAAAEAAAAEAPz/AAAAAAEAAAAEAPv/AAAAAAEAAAAEAPr/AAAAAAEAAAAEAPn/AAAAAAEAAAAEAPj/AAAAAAEAAAAEAPf/AAAAAAEAAAAEAP7/AAAAAAEAAAADAP7/AAAAAAEAAAACAP7/AAAAAAEAAAABAP7/AAAAAAEAAAAAAP7/AAAAAAEAAAD///7/AAAAAAEAAAD+//7/AAAAAAEAAAD9//7/AAAAAAEAAAD8//7/AAAAAAEAAAD7//7/AAAAAAEAAAA=")
+tile_set = SubResource("TileSet_1mg4w")
+
+[node name="table" type="TileMapLayer" parent="TileMaps" unique_id=1547152663]
+tile_map_data = PackedByteArray("AAABAP3/AAAAAAEAAAABAP7/AAAAAAIAAAACAP3/AAABAAEAAAACAP7/AAABAAIAAAADAP3/AAACAAEAAAADAP7/AAACAAIAAAAEAP3/AAADAAEAAAAEAP7/AAADAAIAAAA=")
+tile_set = SubResource("TileSet_u0ype")
+
+[node name="Player" parent="." unique_id=1839408827 instance=ExtResource("1_3bjdp")]
+position = Vector2(-2, 1)
+script = SubResource("GDScript_66jkb")
+
+[node name="--- interactable objects ---" type="Node2D" parent="." unique_id=900451089]
+
+[node name="Lamp" parent="--- interactable objects ---" unique_id=2124581148 instance=ExtResource("5_52fq0")]
+position = Vector2(32, -47)
