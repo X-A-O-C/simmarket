@@ -2,6 +2,7 @@ extends Area2D
 class_name InteractionArea
 
 @export var action_name: String = "interact"
+@export var label_offset: Vector2 = Vector2(0, -48)
 
 var interact: Callable = func():
   pass

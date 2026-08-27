@@ -18,7 +18,7 @@ extends Node2D
     queue_redraw()
 
 ## 1 = hard-edged circle, higher = softer falloff.
-@export_range(1, 16) var softness: int = 6:
+@export_range(1, 16) var softness: int = 7:
   set(value):
     softness = value
     queue_redraw()

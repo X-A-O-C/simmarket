@@ -35,3 +35,4 @@ tile_set = SubResource("TileSet_u0ype")
 [node name="SceneChange" parent="." unique_id=526981174 instance=ExtResource("2_cf1i3")]
 position = Vector2(2, 4)
 target_scene = "uid://ds8q272b5jfs2"
+label_offset = Vector2(20, -64)

@@ -4,8 +4,6 @@ extends Node2D
 @onready var label = $Label
 
 const base_text = "[E] to "
-# How far above the object the label sits, in screen pixels (zoom-independent).
-const label_offset_px := 48.0
 
 var active_areas = []
 var can_interact = true
@@ -24,14 +22,12 @@ func _process(_delta):
     var area = active_areas[0]
     label.text = base_text + area.action_name
 
-    # The label is positioned in world space, so the camera transform scales it
-    # along with everything else. Counter-scale by 1/zoom to pin it to a constant
-    # on-screen size, and convert the offsets from pixels back into world units.
+    # fix scale for when camera zoom is 2 (house scene)
     var zoom: Vector2 = _camera_zoom()
     label.scale = Vector2.ONE / zoom
 
-    label.global_position = area.global_position
-    label.global_position.y -= label_offset_px / zoom.y
+    # label_offset is authored in screen pixels, so divide by zoom to land in world units.
+    label.global_position = area.global_position + area.label_offset / zoom
     label.global_position.x -= label.size.x * label.scale.x / 2
     label.show()
   else:
