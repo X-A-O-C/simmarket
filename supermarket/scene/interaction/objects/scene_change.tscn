@@ -3,23 +3,11 @@
 [ext_resource type="Script" uid="uid://bkk0hgknmfffx" path="res://scripts/interaction/scene_change.gd" id="1_6flyh"]
 [ext_resource type="PackedScene" uid="uid://crai15mjvnsga" path="res://scene/interaction/interaction_area/interaction_area.tscn" id="2_eaxyj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ype"]
-size = Vector2(10, 10)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_u0ype"]
 radius = 25.019993
 
 [node name="SceneChange" type="Area2D" unique_id=526981174]
 script = ExtResource("1_6flyh")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1006266556]
-offset_right = 10.0
-offset_bottom = 10.0
-color = Color(0.6779454, 0.47333318, 0.98054916, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1341964797]
-position = Vector2(5, 5)
-shape = SubResource("RectangleShape2D_u0ype")
 
 [node name="InteractionArea" parent="." unique_id=297106394 instance=ExtResource("2_eaxyj")]
 position = Vector2(5, 5)
