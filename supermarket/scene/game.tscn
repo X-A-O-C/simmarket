@@ -69,5 +69,12 @@ script = SubResource("GDScript_xwcet")
 color = Color(0.3529412, 0.3529412, 0.47843137, 1)
 
 [node name="SceneChange" parent="." unique_id=526981174 instance=ExtResource("3_xwcet")]
-position = Vector2(101, -2)
+position = Vector2(104, -4)
 target_scene = "uid://dhk6veiy41v20"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1719560409]
+offset_left = 102.0
+offset_top = -17.0
+offset_right = 116.0
+offset_bottom = 22.0
+color = Color(0.63639426, 0.28053412, 0.11813433, 1)

@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dhk6veiy41v20"]
 
 [ext_resource type="PackedScene" uid="uid://bk2l0q1p0phyp" path="res://scene/player.tscn" id="1_3bjdp"]
+[ext_resource type="Script" uid="uid://daf6bfpnj7amb" path="res://scripts/house.gd" id="1_g7cke"]
 [ext_resource type="Texture2D" uid="uid://d227df11qmfc4" path="res://image/tileset.png" id="2_52fq0"]
 [ext_resource type="Texture2D" uid="uid://01qke8q8v21y" path="res://image/assetsmini.png" id="2_qg36w"]
 [ext_resource type="Texture2D" uid="uid://itvqsmmecxkq" path="res://image/bed.png" id="3_52fq0"]
@@ -239,7 +240,8 @@ func _process(_delta: float) -> void:
   pass
 "
 
-[node name="Node2D" type="Node2D" unique_id=941730340]
+[node name="House" type="Node2D" unique_id=941730340]
+script = ExtResource("1_g7cke")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=776728638]
 color = Color(0.3529412, 0.3529412, 0.47843137, 1)
@@ -281,3 +283,5 @@ script = SubResource("GDScript_66jkb")
 
 [node name="Lamp" parent="--- interactable objects ---" unique_id=2124581148 instance=ExtResource("5_52fq0")]
 position = Vector2(32, -47)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1369120997]
