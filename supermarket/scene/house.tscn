@@ -198,49 +198,6 @@ texture = ExtResource("3_2813k")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_g7cke")
 
-[sub_resource type="GDScript" id="GDScript_66jkb"]
-script/source = "extends CharacterBody2D
-
-@export var speed: float = 150.0
-@onready var sprite: AnimatedSprite2D = $Sprite
-
-func _physics_process(_delta: float) -> void:
-  var input_direction: Vector2 = Vector2.ZERO
-  if Input.is_key_pressed(KEY_A):
-    input_direction.x -= 1
-  if Input.is_key_pressed(KEY_D):
-    input_direction.x += 1
-  if Input.is_key_pressed(KEY_W):
-    input_direction.y -= 1
-  if Input.is_key_pressed(KEY_S):
-    input_direction.y += 1
-      
-  velocity = input_direction.normalized() * speed
-  _update_animation(input_direction)
-  move_and_slide() 
-# Called when the node enters the scene tree for the first time.
-func _update_animation(direction: Vector2) -> void:
-  if direction == Vector2.ZERO:
-    sprite.stop()
-    return
-  if Input.is_key_pressed(KEY_W):
-    sprite.play('walk_up')
-  if Input.is_key_pressed(KEY_S):
-    sprite.play('walk_down')
-  if Input.is_key_pressed(KEY_A):
-    sprite.play('walk_left')
-  if Input.is_key_pressed(KEY_D):
-    sprite.play('walk_right')
-    
-func _ready() -> void:
-  pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-  pass
-"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ype"]
 size = Vector2(303, 12)
 
@@ -281,7 +238,6 @@ position = Vector2(-145, -113)
 
 [node name="Player" parent="." unique_id=1839408827 instance=ExtResource("1_3bjdp")]
 position = Vector2(-42, -105)
-script = SubResource("GDScript_66jkb")
 
 [node name="--- interactable objects ---" type="Node2D" parent="." unique_id=900451089]
 

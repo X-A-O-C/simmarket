@@ -65,7 +65,10 @@ texture_scale = 0.5
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=535365537]
 
 [node name="LightSelect" parent="CanvasLayer" unique_id=220735320 instance=ExtResource("4_p18sj")]
+z_index = 5
 offset_left = 10.0
-offset_top = -10.0
 offset_right = 97.0
-offset_bottom = 21.0
+offset_bottom = 40.0
+scale = Vector2(1, 1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
