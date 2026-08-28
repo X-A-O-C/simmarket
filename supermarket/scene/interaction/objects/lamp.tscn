@@ -1,34 +1,34 @@
 [gd_scene format=3 uid="uid://cuji1fbr88ypt"]
 
-[ext_resource type="Texture2D" uid="uid://cv24lrn4qwwom" path="res://image/assetsmini.png" id="1_n3k36"]
 [ext_resource type="Script" uid="uid://cku5stp7y652g" path="res://scripts/interaction/objects/lamp.gd" id="1_o3ayv"]
+[ext_resource type="Texture2D" uid="uid://cm4qnp8nd14sq" path="res://image/lamp.png" id="2_ms8w5"]
 [ext_resource type="PackedScene" uid="uid://crai15mjvnsga" path="res://scene/interaction/interaction_area/interaction_area.tscn" id="2_o3ayv"]
 [ext_resource type="PackedScene" uid="uid://cst6xts1ecjoj" path="res://scene/ui/light_select.tscn" id="4_p18sj"]
 [ext_resource type="Texture2D" uid="uid://boon777vgc4fr" path="res://image/light_gradient.tres" id="5_ms8w5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p18sj"]
-atlas = ExtResource("1_n3k36")
-region = Rect2(0, 96, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ms8w5"]
-atlas = ExtResource("1_n3k36")
-region = Rect2(16, 96, 16, 16)
+atlas = ExtResource("2_ms8w5")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7ki5"]
-atlas = ExtResource("1_n3k36")
-region = Rect2(32, 96, 16, 16)
+atlas = ExtResource("2_ms8w5")
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8jpig"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jpig"]
+atlas = ExtResource("2_ms8w5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0ype"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p18sj")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ms8w5")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i7ki5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jpig")
 }],
 "loop": 1,
 "name": &"default",
@@ -41,8 +41,8 @@ radius = 26.019224
 [node name="Lamp" type="Node2D" unique_id=2124581148]
 script = ExtResource("1_o3ayv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2095697052]
-sprite_frames = SubResource("SpriteFrames_8jpig")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1383348528]
+sprite_frames = SubResource("SpriteFrames_u0ype")
 
 [node name="InteractionArea" parent="." unique_id=297106394 instance=ExtResource("2_o3ayv")]
 action_name = "choose light"
