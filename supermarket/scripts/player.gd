@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 var input_direction: Vector2 = Vector2.ZERO
 enum dir {UP, DOWN, LEFT, RIGHT}
@@ -9,7 +9,7 @@ var current_dir: int = dir.LEFT
 func get_input():
   input_direction = Input.get_vector("left", "right", "up", "down")
   velocity = input_direction * speed
-
+    
 func _physics_process(_delta: float) -> void:
   get_input()
   update_animation()

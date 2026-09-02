@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vf5jow7crtqk"]
 
 [ext_resource type="Script" uid="uid://dwsk7krtk011u" path="res://scripts/interaction/interaction_manager.gd" id="1_bisbg"]
+[ext_resource type="Script" uid="uid://crdho5xc6dm63" path="res://scripts/canvas_modulate.gd" id="2_4o6mi"]
 
 [node name="InteractionManager" type="Node2D" unique_id=1369793529]
 script = ExtResource("1_bisbg")
@@ -17,3 +18,9 @@ grow_horizontal = 2
 text = "[E] INTERACT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2069994034]
+color = Color(0.32172796, 0.32172796, 0.32172796, 1)
+script = ExtResource("2_4o6mi")
+day_lenght = 10.0
+night_lenght = 10.0

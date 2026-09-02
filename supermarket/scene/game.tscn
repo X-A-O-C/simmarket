@@ -13,9 +13,6 @@ sources/0 = SubResource("TileSetAtlasSource_33cqm")
 
 [node name="Game" type="Node2D" unique_id=1227949281]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1277374892]
-color = Color(0.6479075, 0.6504248, 0.7722817, 1)
-
 [node name="TileMaps" type="Node2D" parent="." unique_id=726973817]
 
 [node name="Floor" type="TileMapLayer" parent="TileMaps" unique_id=586809046]
