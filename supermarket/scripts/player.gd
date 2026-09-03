@@ -5,16 +5,24 @@ enum dir {UP, DOWN, LEFT, RIGHT}
 var current_dir: int = dir.LEFT
 @export var speed: float = 150.0
 @onready var sprite: AnimatedSprite2D = $Sprite
+@onready var hour_label: RichTextLabel = $CanvasLayer/RichTextLabel
+@onready var canvas_modulate: day_and_night_cycle = get_tree().get_first_node_in_group("interacton_mg").get_node("CanvasModulate")
+@warning_ignore("narrowing_conversion")
+@onready var mnoznik: int = (canvas_modulate.day_lenght_orginal + canvas_modulate.no_change_time_orginal + canvas_modulate.night_lenght_orginal) / 24
+
+func _ready() -> void:
+  hour_label.text = str(int(ceil((canvas_modulate.day_lenght + canvas_modulate.no_change_time + canvas_modulate.night_lenght) / mnoznik)))
+
+func _physics_process(_delta: float) -> void:
+  get_input()
+  update_animation()
+  update_hour()
+  move_and_slide() 
 
 func get_input():
   input_direction = Input.get_vector("left", "right", "up", "down")
   velocity = input_direction * speed
     
-func _physics_process(_delta: float) -> void:
-  get_input()
-  update_animation()
-  move_and_slide() 
-
 func update_animation() -> void:
   if input_direction == Vector2.ZERO:
     sprite.stop()
@@ -31,3 +39,6 @@ func update_animation() -> void:
   elif input_direction.y > 0:
     current_dir = dir.DOWN
     sprite.play('walk_down')
+
+func update_hour():
+  hour_label.text = str(int(ceil((canvas_modulate.day_lenght + canvas_modulate.no_change_time + canvas_modulate.night_lenght) / mnoznik)))

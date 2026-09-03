@@ -22,7 +22,7 @@ func _ready() -> void:
   color = org_color
   day_lenght_orginal = day_lenght
   night_lenght_orginal = night_lenght
-  no_change_time = no_change_time_orginal
+  no_change_time_orginal = no_change_time
     
 func _process(delta: float) -> void:
   coundown(delta)
