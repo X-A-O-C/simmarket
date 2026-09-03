@@ -11,7 +11,7 @@ var current_dir: int = dir.LEFT
 @onready var mnoznik: int = (canvas_modulate.day_lenght_orginal + canvas_modulate.no_change_time_orginal + canvas_modulate.night_lenght_orginal) / 24
 
 func _ready() -> void:
-  hour_label.text = str(int(ceil((canvas_modulate.day_lenght + canvas_modulate.no_change_time + canvas_modulate.night_lenght) / mnoznik)))
+  hour_label.text = str(24 - (int(ceil((canvas_modulate.day_lenght + canvas_modulate.no_change_time + canvas_modulate.night_lenght) / mnoznik))))
 
 func _physics_process(_delta: float) -> void:
   get_input()
@@ -41,4 +41,4 @@ func update_animation() -> void:
     sprite.play('walk_down')
 
 func update_hour():
-  hour_label.text = str(int(ceil((canvas_modulate.day_lenght + canvas_modulate.no_change_time + canvas_modulate.night_lenght) / mnoznik)))
+  hour_label.text = str(24 - (int(ceil((canvas_modulate.day_lenght + canvas_modulate.no_change_time + canvas_modulate.night_lenght) / mnoznik))))
