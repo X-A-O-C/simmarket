@@ -4,11 +4,11 @@
 [ext_resource type="Script" uid="uid://daf6bfpnj7amb" path="res://scripts/house.gd" id="1_g7cke"]
 [ext_resource type="Texture2D" uid="uid://d227df11qmfc4" path="res://image/tileset.png" id="2_52fq0"]
 [ext_resource type="Texture2D" uid="uid://01qke8q8v21y" path="res://image/assetsmini.png" id="2_qg36w"]
-[ext_resource type="Texture2D" uid="uid://itvqsmmecxkq" path="res://image/bed.png" id="3_52fq0"]
 [ext_resource type="Texture2D" uid="uid://d1x07a1vv38s3" path="res://image/Longcloset.png" id="3_2813k"]
 [ext_resource type="Texture2D" uid="uid://bs2vl0tyhf5ol" path="res://image/tablehome.png" id="4_qg36w"]
 [ext_resource type="PackedScene" uid="uid://cuji1fbr88ypt" path="res://scene/interaction/objects/lamp.tscn" id="5_52fq0"]
 [ext_resource type="PackedScene" uid="uid://cxnmnniljweak" path="res://scene/interaction/objects/door.tscn" id="6_66jkb"]
+[ext_resource type="PackedScene" uid="uid://bi6os7ujenqff" path="res://scene/interaction/objects/Bed.tscn" id="9_1mg4w"]
 [ext_resource type="PackedScene" uid="uid://cov3j6bdwq0ta" path="res://scene/book.tscn" id="10_1mg4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_52fq0"]
@@ -83,27 +83,6 @@ texture = ExtResource("4_qg36w")
 [sub_resource type="TileSet" id="TileSet_u0ype"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7v54d")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2813k"]
-texture = ExtResource("3_52fq0")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:3/0 = 0
-1:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_uf7p8"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_2813k")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g7cke"]
 texture = ExtResource("3_2813k")
@@ -336,10 +315,6 @@ tile_set = SubResource("TileSet_hhhfv")
 tile_map_data = PackedByteArray("AAAGAP3/AAAAAAEAAAAGAP7/AAAAAAIAAAAHAP3/AAABAAEAAAAHAP7/AAABAAIAAAAIAP3/AAACAAEAAAAIAP7/AAACAAIAAAAJAP3/AAADAAEAAAAJAP7/AAADAAIAAAA=")
 tile_set = SubResource("TileSet_u0ype")
 
-[node name="bed" type="TileMapLayer" parent="TileMaps" unique_id=990930491]
-tile_map_data = PackedByteArray("AAAIAPf/AAAAAAAAAAAIAPj/AAAAAAEAAAAIAPn/AAAAAAIAAAAIAPr/AAAAAAMAAAAJAPf/AAABAAAAAAAJAPj/AAABAAEAAAAJAPn/AAABAAIAAAAJAPr/AAABAAMAAAA=")
-tile_set = SubResource("TileSet_uf7p8")
-
 [node name="closet" type="TileMapLayer" parent="TileMaps" unique_id=2074944393]
 tile_map_data = PackedByteArray("AAD4//v/AAAGAAUAAAD4//z/AAAGAAYAAAD4//3/AAAGAAcAAAD4//7/AAAGAAgAAAD3//v/AAAFAAUAAAD3//z/AAAFAAYAAAD3//3/AAAFAAcAAAD3//7/AAAFAAgAAAA=")
 tile_set = SubResource("TileSet_uxrow")
@@ -347,13 +322,13 @@ tile_set = SubResource("TileSet_uxrow")
 [node name="Door" parent="." unique_id=68911426 instance=ExtResource("6_66jkb")]
 position = Vector2(-145, -113)
 
-[node name="Player" parent="." unique_id=1839408827 instance=ExtResource("1_3bjdp")]
-position = Vector2(-42, -105)
-
 [node name="--- interactable objects ---" type="Node2D" parent="." unique_id=900451089]
 
 [node name="Lamp" parent="--- interactable objects ---" unique_id=2124581148 instance=ExtResource("5_52fq0")]
 position = Vector2(110, -49)
+
+[node name="Bed" parent="--- interactable objects ---" unique_id=206328298 instance=ExtResource("9_1mg4w")]
+position = Vector2(144, -113)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1369120997]
 
@@ -367,3 +342,6 @@ position = Vector2(8.5, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCollision" unique_id=483533439]
 shape = SubResource("RectangleShape2D_u0ype")
+
+[node name="Player" parent="." unique_id=1839408827 instance=ExtResource("1_3bjdp")]
+position = Vector2(-128, -105)

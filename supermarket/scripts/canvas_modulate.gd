@@ -1,4 +1,4 @@
-extends CanvasModulate
+class_name day_and_night_cycle extends CanvasModulate
 
 # time is in seconds
 

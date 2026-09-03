@@ -1,0 +1,43 @@
+[gd_scene format=4 uid="uid://bi6os7ujenqff"]
+
+[ext_resource type="Script" uid="uid://bfrkgd17sxgqt" path="res://scripts/interaction/objects/bed.gd" id="1_4w0nk"]
+[ext_resource type="Texture2D" uid="uid://itvqsmmecxkq" path="res://image/bed.png" id="1_pf8qe"]
+[ext_resource type="PackedScene" uid="uid://crai15mjvnsga" path="res://scene/interaction/interaction_area/interaction_area.tscn" id="2_4w0nk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4hvv"]
+texture = ExtResource("1_pf8qe")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8cf8r"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_t4hvv")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4o6mi"]
+radius = 23.0
+height = 88.0
+
+[node name="Bed" type="Node2D" unique_id=206328298]
+script = ExtResource("1_4w0nk")
+
+[node name="bed" type="TileMapLayer" parent="." unique_id=3368475]
+tile_map_data = PackedByteArray("AAD//wEAAAAAAAMAAAD///7/AAAAAAAAAAD/////AAAAAAEAAAD//wAAAAAAAAIAAAAAAP7/AAABAAAAAAAAAP//AAABAAEAAAAAAAAAAAABAAIAAAAAAAEAAAABAAMAAAA=")
+tile_set = SubResource("TileSet_8cf8r")
+
+[node name="InteractionArea" parent="." unique_id=297106394 instance=ExtResource("2_4w0nk")]
+action_name = "Go to sleep"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1281442273]
+shape = SubResource("CapsuleShape2D_4o6mi")

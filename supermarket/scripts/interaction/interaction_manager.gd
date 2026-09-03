@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var player = get_tree().get_first_node_in_group("player")
+@onready var player: Player = get_tree().get_first_node_in_group("player")
 @onready var label = $Label
 
 const base_text = "[E] to "
@@ -37,7 +37,9 @@ func _camera_zoom() -> Vector2:
   var cam := get_viewport().get_camera_2d()
   return cam.zoom if cam else Vector2.ONE
     
-func _sort_by_distance_to_player(area1, area2):
+func _sort_by_distance_to_player(area1, area2) -> bool:
+  player = get_tree().get_first_node_in_group("player")
+  
   var area1_to_player = player.global_position.distance_to(area1.global_position)
   var area2_to_player = player.global_position.distance_to(area2.global_position)
   return area1_to_player < area2_to_player
