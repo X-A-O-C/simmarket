@@ -1,0 +1,41 @@
+[gd_scene format=4 uid="uid://u5whqwivfb1"]
+
+[ext_resource type="Script" uid="uid://bak6g8oxvn3wi" path="res://scripts/interaction/objects/cashregister.gd" id="1_7xdr2"]
+[ext_resource type="Texture2D" uid="uid://cver4xfjyj74p" path="res://image/cashregister.png" id="1_tubwa"]
+[ext_resource type="PackedScene" uid="uid://crai15mjvnsga" path="res://scene/interaction/interaction_area/interaction_area.tscn" id="2_7xdr2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_awdvr"]
+texture = ExtResource("1_tubwa")
+1:0/0 = 0
+2:0/0 = 0
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+2:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rxcja"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_awdvr")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wha2"]
+size = Vector2(42, 62)
+
+[node name="Cashregister" type="Node2D" unique_id=1026100606]
+script = ExtResource("1_7xdr2")
+
+[node name="cashregister" type="TileMapLayer" parent="." unique_id=19957882]
+tile_map_data = PackedByteArray("AAD///7/AAABAAAAAAD/////AAABAAEAAAD//wAAAAABAAIAAAD//wEAAAABAAMAAAAAAP7/AAACAAAAAAAAAP//AAACAAEAAAAAAAAAAAACAAIAAAAAAAEAAAACAAMAAAA=")
+tile_set = SubResource("TileSet_rxcja")
+
+[node name="InteractionArea" parent="." unique_id=297106394 instance=ExtResource("2_7xdr2")]
+action_name = "idk what to write there"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=792177031]
+position = Vector2(5, 1)
+shape = SubResource("RectangleShape2D_0wha2")
+
+[connection signal="body_exited" from="InteractionArea" to="." method="leaved_interaction"]

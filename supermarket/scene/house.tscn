@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bi6os7ujenqff" path="res://scene/interaction/objects/Bed.tscn" id="9_1mg4w"]
 [ext_resource type="PackedScene" uid="uid://cov3j6bdwq0ta" path="res://scene/book.tscn" id="10_1mg4w"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_52fq0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1mg4w"]
 texture = ExtResource("2_52fq0")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -27,9 +27,9 @@ texture = ExtResource("2_52fq0")
 
 [sub_resource type="TileSet" id="TileSet_jtq2y"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_52fq0")
+sources/0 = SubResource("TileSetAtlasSource_1mg4w")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66jkb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgfgs"]
 texture = ExtResource("2_qg36w")
 0:0/0 = 0
 1:0/0 = 0
@@ -59,9 +59,9 @@ texture = ExtResource("2_qg36w")
 2:6/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_hhhfv"]
-sources/0 = SubResource("TileSetAtlasSource_66jkb")
+sources/0 = SubResource("TileSetAtlasSource_sgfgs")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7v54d"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cuyo6"]
 texture = ExtResource("4_qg36w")
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -82,9 +82,9 @@ texture = ExtResource("4_qg36w")
 
 [sub_resource type="TileSet" id="TileSet_u0ype"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_7v54d")
+sources/0 = SubResource("TileSetAtlasSource_cuyo6")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g7cke"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7v54d"]
 texture = ExtResource("3_2813k")
 0:0/0 = 0
 1:0/0 = 0
@@ -289,7 +289,7 @@ texture = ExtResource("3_2813k")
 
 [sub_resource type="TileSet" id="TileSet_uxrow"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_g7cke")
+sources/0 = SubResource("TileSetAtlasSource_7v54d")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0ype"]
 size = Vector2(303, 12)
@@ -329,8 +329,6 @@ position = Vector2(110, -49)
 
 [node name="Bed" parent="--- interactable objects ---" unique_id=206328298 instance=ExtResource("9_1mg4w")]
 position = Vector2(144, -113)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1369120997]
 
 [node name="--- static objects ---" type="Node2D" parent="." unique_id=264057149]
 

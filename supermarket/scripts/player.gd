@@ -9,7 +9,7 @@ var current_dir: int = dir.LEFT
 @onready var canvas_modulate: day_and_night_cycle = get_tree().get_first_node_in_group("interacton_mg").get_node("CanvasModulate")
 @warning_ignore("narrowing_conversion")
 @onready var mnoznik: int = (canvas_modulate.day_lenght_orginal + canvas_modulate.no_change_time_orginal + canvas_modulate.night_lenght_orginal) / 24
-
+var can_move: bool = true
 func _ready() -> void:
   hour_label.text = str(24 - (int(ceil((canvas_modulate.day_lenght + canvas_modulate.no_change_time + canvas_modulate.night_lenght) / mnoznik))))
 
@@ -20,6 +20,8 @@ func _physics_process(_delta: float) -> void:
   move_and_slide() 
 
 func get_input():
+  if not can_move:
+    return
   input_direction = Input.get_vector("left", "right", "up", "down")
   velocity = input_direction * speed
     
