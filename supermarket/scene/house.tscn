@@ -343,3 +343,5 @@ shape = SubResource("RectangleShape2D_u0ype")
 
 [node name="Player" parent="." unique_id=1839408827 instance=ExtResource("1_3bjdp")]
 position = Vector2(-128, -105)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=263838005]
