@@ -41,13 +41,9 @@ sources/0 = SubResource("TileSetAtlasSource_1mg4w")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cuyo6"]
 texture = ExtResource("4_qg36w")
 0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0 = 0
@@ -79,8 +75,17 @@ texture = ExtResource("4_6hm8r")
 7:2/0 = 0
 8:2/0 = 0
 9:2/0 = 0
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+4:0/0 = 0
+5:1/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_jv1ba"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3s21c")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7v54d"]
@@ -139,7 +144,9 @@ texture = ExtResource("3_2813k")
 1:6/0 = 0
 3:6/0 = 0
 5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:6/0 = 0
 9:6/0 = 0
 11:6/0 = 0
@@ -149,7 +156,9 @@ texture = ExtResource("3_2813k")
 1:7/0 = 0
 3:7/0 = 0
 5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:7/0 = 0
 9:7/0 = 0
 11:7/0 = 0
@@ -425,14 +434,16 @@ tile_map_data = PackedByteArray("AAD4//X/AAAEAAAAAAD4//b/AAACAAAAAAD5//X/AAAEAAA
 tile_set = SubResource("TileSet_jtq2y")
 
 [node name="table" type="TileMapLayer" parent="TileMaps" unique_id=1547152663]
+z_index = 10
 tile_map_data = PackedByteArray("AAAGAP3/AAAAAAEAAAAGAP7/AAAAAAIAAAAHAP3/AAABAAEAAAAHAP7/AAABAAIAAAAIAP3/AAACAAEAAAAIAP7/AAACAAIAAAAJAP3/AAADAAEAAAAJAP7/AAADAAIAAAA=")
 tile_set = SubResource("TileSet_u0ype")
 
 [node name="pedestal" type="TileMapLayer" parent="TileMaps" unique_id=829811001]
-tile_map_data = PackedByteArray("AAAEAPb/AAAGAAEAAAAEAPf/AAAGAAIAAAAFAPb/AAAHAAEAAAAFAPf/AAAHAAIAAAAGAPb/AAAIAAEAAAAGAPf/AAAIAAIAAAAHAPb/AAAJAAEAAAAHAPf/AAAJAAIAAAA=")
+tile_map_data = PackedByteArray("AAAEAPb/AAAGAAEAAAAEAPf/AAAGAAIAAAAFAPb/AAAHAAEAAAAFAPf/AAAHAAIAAAAGAPb/AAAIAAEAAAAGAPf/AAAIAAIAAAAHAPb/AAAJAAEAAAAHAPf/AAAJAAIAAAAEAPX/AAAGAAAAAAAFAPX/AAAGAAAAAAAGAPX/AAAGAAAAAAAHAPX/AAAGAAAAAAAIAPX/AAAGAAAAAAAJAPX/AAAGAAAAAAAJAPb/AAAGAAAAAAAKAPb/AAAGAAAAAAALAPb/AAAGAAAAAAAMAPb/AAAGAAAAAAANAPb/AAAGAAAAAAAOAPX/AAAGAAAAAAAOAPb/AAAGAAAAAAAOAPf/AAAGAAAAAAAOAPj/AAAGAAAAAAAOAPn/AAAGAAAAAAAOAPr/AAAGAAAAAAAOAPv/AAAGAAAAAAAEAPT/AAAGAAAAAAA=")
 tile_set = SubResource("TileSet_jv1ba")
 
 [node name="closet" type="TileMapLayer" parent="TileMaps" unique_id=2074944393]
+z_index = 4
 tile_map_data = PackedByteArray("AAD3//v/AAAFAAUAAAD3//z/AAAFAAYAAAD3//3/AAAFAAcAAAD3//7/AAAFAAgAAAD4//v/AAAGAAUAAAD4//z/AAAGAAYAAAD4//3/AAAGAAcAAAD4//7/AAAGAAgAAAA=")
 tile_set = SubResource("TileSet_uxrow")
 
@@ -451,6 +462,7 @@ position = Vector2(-145, -113)
 [node name="--- interactable objects ---" type="Node2D" parent="." unique_id=900451089]
 
 [node name="Lamp" parent="--- interactable objects ---" unique_id=2124581148 instance=ExtResource("5_52fq0")]
+z_index = 12
 position = Vector2(110, -49)
 
 [node name="Bed" parent="--- interactable objects ---" unique_id=206328298 instance=ExtResource("9_1mg4w")]
