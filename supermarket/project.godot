@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://bmlmmfby06hks"
 [autoload]
 
 InteractionManager="*uid://vf5jow7crtqk"
+SaveManager="*uid://do1dx2ynhqarw"
 
 [display]
 
