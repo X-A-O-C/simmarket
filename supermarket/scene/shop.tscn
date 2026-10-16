@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d227df11qmfc4" path="res://image/tileset.png" id="1_iuafe"]
 [ext_resource type="Texture2D" uid="uid://eyimcl58pu4q" path="res://image/Thecounter.png" id="2_4p3p6"]
 [ext_resource type="Texture2D" uid="uid://g1s208v1sxuf" path="res://image/item-flour-shelf.png" id="3_brg4d"]
+[ext_resource type="Texture2D" uid="uid://csdr1irufk0p0" path="res://image/eggs.png" id="3_pd0vs"]
 [ext_resource type="PackedScene" uid="uid://cxnmnniljweak" path="res://scene/interaction/objects/door.tscn" id="3_phbgv"]
 [ext_resource type="PackedScene" uid="uid://bk2l0q1p0phyp" path="res://scene/player.tscn" id="5_0wha2"]
 [ext_resource type="PackedScene" uid="uid://u5whqwivfb1" path="res://scene/interaction/objects/cashregister.tscn" id="5_brg4d"]
@@ -120,6 +121,11 @@ tile_set = SubResource("TileSet_phbgv")
 [node name="counters_UP" type="TileMapLayer" parent="TileMaps" unique_id=622177176]
 tile_map_data = PackedByteArray("AAD5//T/AAACAAEAAAD5//X/AAACAAIAAAD6//T/AAAAAAEAAAD6//X/AAAAAAIAAAD7//T/AAABAAEAAAD7//X/AAABAAIAAAD8//T/AAACAAEAAAD8//X/AAACAAIAAAD9//T/AAAAAAEAAAD9//X/AAAAAAIAAAD+//T/AAABAAEAAAD+//X/AAABAAIAAAD///T/AAACAAEAAAD///X/AAACAAIAAAAAAPT/AAAAAAEAAAAAAPX/AAAAAAIAAAABAPT/AAABAAEAAAABAPX/AAABAAIAAAACAPT/AAACAAEAAAACAPX/AAACAAIAAAADAPT/AAAAAAEAAAADAPX/AAAAAAIAAAAEAPT/AAABAAEAAAAEAPX/AAABAAIAAAAFAPT/AAACAAEAAAAFAPX/AAACAAIAAAAGAPT/AAAAAAEAAAAGAPX/AAAAAAIAAAAHAPT/AAABAAEAAAAHAPX/AAABAAIAAAAIAPT/AAACAAEAAAAIAPX/AAACAAIAAAAJAPT/AAAAAAEAAAAJAPX/AAAAAAIAAAAKAPT/AAABAAEAAAAKAPX/AAABAAIAAAALAPT/AAACAAEAAAALAPX/AAACAAIAAAD4//P/AAABAAAAAAD5//P/AAACAAAAAAD6//P/AAAAAAAAAAD7//P/AAABAAAAAAD8//P/AAACAAAAAAD9//P/AAAAAAAAAAD+//P/AAABAAAAAAD///P/AAACAAAAAAAAAPP/AAAAAAAAAAABAPP/AAABAAAAAAACAPP/AAACAAAAAAADAPP/AAAAAAAAAAAEAPP/AAABAAAAAAAFAPP/AAACAAAAAAAGAPP/AAAAAAAAAAAHAPP/AAABAAAAAAAIAPP/AAACAAAAAAAJAPP/AAAAAAAAAAAKAPP/AAABAAAAAAALAPP/AAACAAAAAAD3//P/AAAAAAAAAAD3//T/AAAAAAEAAAD4//T/AAABAAEAAAD4//X/AAABAAIAAAD3//X/AAAAAAIAAAA=")
 tile_set = SubResource("TileSet_xr3kg")
+
+[node name="eggs" type="Sprite2D" parent="TileMaps/counters_UP" unique_id=937435491]
+position = Vector2(-135, -195)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_pd0vs")
 
 [node name="counters_DOWN" type="TileMapLayer" parent="TileMaps" unique_id=1038060610]
 z_index = 8
