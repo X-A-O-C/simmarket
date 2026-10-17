@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cxnmnniljweak" path="res://scene/interaction/objects/door.tscn" id="3_phbgv"]
 [ext_resource type="PackedScene" uid="uid://bk2l0q1p0phyp" path="res://scene/player.tscn" id="5_0wha2"]
 [ext_resource type="PackedScene" uid="uid://u5whqwivfb1" path="res://scene/interaction/objects/cashregister.tscn" id="5_brg4d"]
+[ext_resource type="Script" uid="uid://csbf5pmsd4sju" path="res://scene/npc_spawner.gd" id="8_prb2b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4p3p6"]
 texture = ExtResource("1_iuafe")
@@ -147,3 +148,9 @@ position = Vector2(-145, -113)
 
 [node name="Player" parent="." unique_id=1839408827 instance=ExtResource("5_0wha2")]
 position = Vector2(-127, -104)
+
+[node name="NPC_spawner" type="Node2D" parent="." unique_id=1043974820]
+script = ExtResource("8_prb2b")
+
+[node name="npc" type="Sprite2D" parent="NPC_spawner" unique_id=396224975]
+position = Vector2(-47, -98)
