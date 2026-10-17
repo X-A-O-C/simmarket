@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dob4nctff1vf3"
-path="res://.godot/imported/head.png-3c4610f3e3cc0f4df3fac9509c5e08d9.ctex"
+uid="uid://bp2v3cldu3h18"
+path="res://.godot/imported/hands.png-56abcb67d87dfd8759e6edbd1da00bda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/npc_spritesheets/head.png"
-dest_files=["res://.godot/imported/head.png-3c4610f3e3cc0f4df3fac9509c5e08d9.ctex"]
+source_file="res://image/npc_spritesheets/hands.png"
+dest_files=["res://.godot/imported/hands.png-56abcb67d87dfd8759e6edbd1da00bda.ctex"]
 
 [params]
 
