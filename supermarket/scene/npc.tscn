@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cdf7e4l2l8vd3"]
 
 [ext_resource type="Texture2D" uid="uid://bywkkfnrmvu76" path="res://image/npc_spritesheets/hair/hair _type1/hair_front_type1.png" id="1_8oust"]
-[ext_resource type="Script" uid="uid://csbf5pmsd4sju" path="res://scene/npc_spawner.gd" id="1_pesj1"]
+[ext_resource type="Script" uid="uid://xwnhshjvfsiu" path="res://scene/npc.gd" id="1_eitvi"]
 [ext_resource type="Texture2D" uid="uid://chlov3q334c3l" path="res://image/npc_spritesheets/hair/hair _type1/hair_back_type1.png" id="2_pesj1"]
 [ext_resource type="Texture2D" uid="uid://cpek36nmqt30" path="res://image/npc_spritesheets/hair/hair _type1/hair_left_type1.png" id="3_06vv4"]
 [ext_resource type="Texture2D" uid="uid://dw3h0nclenul6" path="res://image/npc_spritesheets/hair/hair _type1/hair_right_type1.png" id="4_fb5s2"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dn1n5m8niarsr" path="res://image/npc_spritesheets/boots.png" id="11_eitvi"]
 
 [node name="Npc" type="Node2D" unique_id=1778663530]
-script = ExtResource("1_pesj1")
+script = ExtResource("1_eitvi")
 
 [node name="hairs" type="Node2D" parent="." unique_id=2045922741]
 
