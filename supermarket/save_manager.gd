@@ -3,7 +3,11 @@ extends Node
 const SAVE_PATH = "user://save_game.dat"
 
 var game_data = {
-  "currency": 50.0
+  "currency": 50.0,
+  "items": {
+    "flour": 4,
+    "egg": 2
+  }
 }
 
 func _ready() -> void:
@@ -28,3 +32,10 @@ func load_game() -> void:
     if loaded_data is Dictionary:
       game_data = loaded_data
       print("game loading")
+
+func delete_save() -> void:
+  if not FileAccess.file_exists(SAVE_PATH):
+    print("no save file exists")
+    return 
+  else:
+    DirAccess.remove_absolute(SAVE_PATH)

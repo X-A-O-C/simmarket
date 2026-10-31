@@ -12,6 +12,9 @@ extends Node2D
 @onready var legs: Sprite2D = $legs
 @onready var boots: Sprite2D = $boots
 
+@export var shopping_list: Dictionary = {
+  
+}
 
 
 func _ready() -> void:
@@ -28,13 +31,21 @@ func _ready() -> void:
   hand_right.region_rect = hand_left.region_rect
   generate_object(legs, Vector2(14,0), [2,0])
   generate_object(boots, Vector2(0,4), [0,3])
-
-
-  
+  shopping_list = generate_shopping_list()
+  print(shopping_list)
 func generate_object(object: Sprite2D, spacing: Vector2, max_random: Array) ->  void:
     @warning_ignore("shadowed_variable_base_class")
     var position: Vector2 = Vector2(randi_range(0,max_random[0]) * spacing.x,  randi_range(0,max_random[1]) * spacing.y)
     object.region_rect = Rect2(position, object.region_rect.size)
 
+func generate_shopping_list() -> Dictionary:
+  var items: Dictionary = SaveManager.game_data["items"]
+  var szopping_list: Dictionary = {}
+  for k in items:
+    var v = items[k]
+    var item_amount = randi_range(0, max(0, ceil(v / 2)))
+    szopping_list[k] = item_amount
+    
+  return szopping_list
   
   
