@@ -33,6 +33,7 @@ func _ready() -> void:
   generate_object(boots, Vector2(0,4), [0,3])
   shopping_list = generate_shopping_list()
   print(shopping_list)
+  
 func generate_object(object: Sprite2D, spacing: Vector2, max_random: Array) ->  void:
     @warning_ignore("shadowed_variable_base_class")
     var position: Vector2 = Vector2(randi_range(0,max_random[0]) * spacing.x,  randi_range(0,max_random[1]) * spacing.y)
@@ -48,4 +49,4 @@ func generate_shopping_list() -> Dictionary:
     
   return szopping_list
   
-  
+func get_the_move

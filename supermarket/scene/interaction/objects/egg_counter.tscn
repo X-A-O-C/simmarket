@@ -1,0 +1,138 @@
+[gd_scene format=4 uid="uid://xkgjugsvx54m"]
+
+[ext_resource type="Texture2D" uid="uid://eyimcl58pu4q" path="res://image/Thecounter.png" id="1_7m6y3"]
+[ext_resource type="Texture2D" uid="uid://csdr1irufk0p0" path="res://image/eggs.png" id="2_d04jn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i7txf"]
+texture = ExtResource("1_7m6y3")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xbg45"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_i7txf")
+
+[node name="EggCounter" type="TileMapLayer" unique_id=1648446084]
+tile_map_data = PackedByteArray("AAAAAP3/AAAAAAAAAAAAAP7/AAAAAAEAAAAAAP//AAAAAAIAAAABAP3/AAABAAAAAAABAP7/AAABAAEAAAABAP//AAABAAIAAAACAP3/AAACAAAAAAACAP7/AAACAAEAAAACAP//AAACAAIAAAA=")
+tile_set = SubResource("TileSet_xbg45")
+
+[node name="1" type="Sprite2D" parent="." unique_id=1471075420]
+position = Vector2(9, -35)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_d04jn")
+
+[node name="2" type="Sprite2D" parent="." unique_id=1520427288]
+position = Vector2(39, -35)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_d04jn")
+
+[node name="3" type="Sprite2D" parent="." unique_id=902681971]
+position = Vector2(24, -35)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_d04jn")
+
+[node name="4" type="Sprite2D" parent="." unique_id=760158569]
+position = Vector2(9.4, -26.2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_d04jn")
+
+[node name="5" type="Sprite2D" parent="." unique_id=986014970]
+position = Vector2(39.4, -26.2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_d04jn")
+
+[node name="6" type="Sprite2D" parent="." unique_id=729317340]
+position = Vector2(24.4, -26.2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_d04jn")
+
+[node name="7" type="Sprite2D" parent="." unique_id=456317871]
+position = Vector2(9.4, -17.2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_d04jn")
+
+[node name="8" type="Sprite2D" parent="." unique_id=837505278]
+position = Vector2(39.4, -17.2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_d04jn")
+
+[node name="9" type="Sprite2D" parent="." unique_id=2124298825]
+position = Vector2(24.4, -17.2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_d04jn")
+
+[node name="10" type="Sprite2D" parent="." unique_id=306592792]
+position = Vector2(9.4, -8.200002)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_d04jn")
+
+[node name="11" type="Sprite2D" parent="." unique_id=1661971502]
+position = Vector2(39.4, -8.200002)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_d04jn")
+
+[node name="12" type="Sprite2D" parent="." unique_id=505213952]
+position = Vector2(24.4, -8.200002)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_d04jn")
