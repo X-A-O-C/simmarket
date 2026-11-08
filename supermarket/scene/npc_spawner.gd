@@ -1,7 +1,7 @@
 extends Node2D
 
 const NPC_SCENE = preload("res://scene/npc.tscn")
-@export var npc_spawn_intervall: float = 5.0
+@export var npc_spawn_intervall: float = 10.0
 @export var max_npc_amount: int = 8
 @onready var player: Player = $"../Player"
 var can_spawn_an_npc = true
@@ -10,7 +10,7 @@ func _process(_delta: float) -> void:
 
 func spawn_npc():
     if can_spawn_an_npc:
-      if int(player.hour_label.text) in range(8,16):
+      if int(player.hour_label.text) in range(6,16):
         if self.get_child_count() >= max_npc_amount:
           return
         can_spawn_an_npc = false
