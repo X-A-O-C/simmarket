@@ -24,15 +24,14 @@ func _ready() -> void:
   generate_object(body, Vector2(20,24), [2,1])
   var random = randi_range(0,3)
   if random == 2:
-    body.z_index = -4
-  else:
     body.z_index = -3
+  else:
+    body.z_index = -2
   generate_object(hand_left, Vector2(4,4), [2,1])
   hand_right.region_rect = hand_left.region_rect
   generate_object(legs, Vector2(14,0), [2,0])
   generate_object(boots, Vector2(0,4), [0,3])
   shopping_list = generate_shopping_list()
-  print(shopping_list)
   
 func generate_object(object: Sprite2D, spacing: Vector2, max_random: Array) ->  void:
     @warning_ignore("shadowed_variable_base_class")
@@ -49,4 +48,4 @@ func generate_shopping_list() -> Dictionary:
     
   return szopping_list
   
-func get_the_move
+#func get_the_move

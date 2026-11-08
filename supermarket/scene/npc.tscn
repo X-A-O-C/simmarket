@@ -11,8 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://bp2v3cldu3h18" path="res://image/npc_spritesheets/hands.png" id="9_co7e6"]
 [ext_resource type="Texture2D" uid="uid://duhleg4tj7lca" path="res://image/npc_spritesheets/legs.png" id="10_37thx"]
 [ext_resource type="Texture2D" uid="uid://dn1n5m8niarsr" path="res://image/npc_spritesheets/boots.png" id="11_eitvi"]
+[ext_resource type="Script" uid="uid://bn670kkr8s2br" path="res://scene/navigation_agent_2d.gd" id="12_kigg8"]
 
-[node name="Npc" type="Node2D" unique_id=1778663530]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xr3kg"]
+size = Vector2(16, 42)
+
+[node name="Npc" type="CharacterBody2D" unique_id=281191698]
 script = ExtResource("1_eitvi")
 
 [node name="hairs" type="Node2D" parent="." unique_id=2045922741]
@@ -38,7 +42,7 @@ visible = false
 texture = ExtResource("4_fb5s2")
 
 [node name="head" type="Sprite2D" parent="." unique_id=1079575402]
-z_index = -3
+z_index = -2
 texture = ExtResource("6_fb5s2")
 region_enabled = true
 region_rect = Rect2(24, 0, 8, 10)
@@ -49,7 +53,7 @@ region_enabled = true
 region_rect = Rect2(8, 5, 6, 3)
 
 [node name="body" type="Sprite2D" parent="." unique_id=1847743126]
-z_index = -4
+z_index = -3
 position = Vector2(0, 12)
 texture = ExtResource("8_04kj1")
 region_enabled = true
@@ -82,3 +86,11 @@ region_rect = Rect2(0, 12, 10, 2)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1947601368]
 position = Vector2(0, 15)
 zoom = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055971930]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_xr3kg")
+disabled = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1971642732]
+script = ExtResource("12_kigg8")

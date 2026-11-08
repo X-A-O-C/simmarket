@@ -8,6 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bk2l0q1p0phyp" path="res://scene/player.tscn" id="5_0wha2"]
 [ext_resource type="PackedScene" uid="uid://u5whqwivfb1" path="res://scene/interaction/objects/cashregister.tscn" id="5_brg4d"]
 [ext_resource type="Script" uid="uid://csbf5pmsd4sju" path="res://scene/npc_spawner.gd" id="8_prb2b"]
+[ext_resource type="PackedScene" uid="uid://cdf7e4l2l8vd3" path="res://scene/npc.tscn" id="9_tartn"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_prb2b"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4p3p6"]
 texture = ExtResource("1_iuafe")
@@ -24,9 +31,11 @@ texture = ExtResource("1_iuafe")
 4:0/0 = 0
 0:3/0 = 0
 0:4/0 = 0
+0:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_prb2b")
 
 [sub_resource type="TileSet" id="TileSet_phbgv"]
 physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_4p3p6")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tartn"]
@@ -122,26 +131,25 @@ tile_set = SubResource("TileSet_phbgv")
 [node name="counters_UP" type="TileMapLayer" parent="TileMaps" unique_id=622177176]
 tile_set = SubResource("TileSet_xr3kg")
 
-[node name="Egg1" parent="TileMaps/counters_UP" unique_id=1648446084 groups=["Egg"] instance=ExtResource("3_prb2b")]
+[node name="Egg1" parent="TileMaps/counters_UP" unique_id=1648446084 instance=ExtResource("3_prb2b")]
 position = Vector2(-144, -160)
-tile_map_data = PackedByteArray("AAAAAP3/AAAAAAAAAAAAAP//AAAAAAIAAAABAP3/AAABAAAAAAABAP7/AAABAAEAAAABAP//AAABAAIAAAACAP3/AAACAAAAAAACAP7/AAACAAEAAAACAP//AAACAAIAAAAAAP7/AAAAAAEAAAA=")
 
-[node name="Egg2" parent="TileMaps/counters_UP" unique_id=1609927178 groups=["Egg"] instance=ExtResource("3_prb2b")]
+[node name="Egg2" parent="TileMaps/counters_UP" unique_id=1609927178 instance=ExtResource("3_prb2b")]
 position = Vector2(-96, -160)
 
-[node name="Egg3" parent="TileMaps/counters_UP" unique_id=139325093 groups=["Egg"] instance=ExtResource("3_prb2b")]
+[node name="Egg3" parent="TileMaps/counters_UP" unique_id=139325093 instance=ExtResource("3_prb2b")]
 position = Vector2(-48, -160)
 
-[node name="Egg4" parent="TileMaps/counters_UP" unique_id=1183697540 groups=["Egg"] instance=ExtResource("3_prb2b")]
+[node name="Egg4" parent="TileMaps/counters_UP" unique_id=1183697540 instance=ExtResource("3_prb2b")]
 position = Vector2(0, -160)
 
-[node name="Egg5" parent="TileMaps/counters_UP" unique_id=932768248 groups=["Egg"] instance=ExtResource("3_prb2b")]
+[node name="Egg5" parent="TileMaps/counters_UP" unique_id=932768248 instance=ExtResource("3_prb2b")]
 position = Vector2(48, -160)
 
-[node name="Egg6" parent="TileMaps/counters_UP" unique_id=929332948 groups=["Egg"] instance=ExtResource("3_prb2b")]
+[node name="Egg6" parent="TileMaps/counters_UP" unique_id=929332948 instance=ExtResource("3_prb2b")]
 position = Vector2(96, -160)
 
-[node name="Egg7" parent="TileMaps/counters_UP" unique_id=1865838941 groups=["Egg"] instance=ExtResource("3_prb2b")]
+[node name="Egg7" parent="TileMaps/counters_UP" unique_id=1865838941 instance=ExtResource("3_prb2b")]
 position = Vector2(144, -160)
 
 [node name="counters_DOWN" type="TileMapLayer" parent="TileMaps" unique_id=1038060610]
@@ -154,7 +162,7 @@ scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAABAOL/AAAAAAAAAAABAOP/AAAAAAEAAAA=")
 tile_set = SubResource("TileSet_jv1ba")
 
-[node name="NavigationPoints" type="Node2D" parent="." unique_id=1446603260]
+[node name="NavigationPoints" type="Node2D" parent="." unique_id=1446603260 groups=["NavigationGroup"]]
 
 [node name="1" type="Marker2D" parent="NavigationPoints" unique_id=1498292679]
 position = Vector2(-120, -180)
@@ -192,3 +200,5 @@ position = Vector2(-127, -104)
 z_index = 3
 position = Vector2(-100, -130)
 script = ExtResource("8_prb2b")
+
+[node name="Npc" parent="NPC_spawner" unique_id=281191698 instance=ExtResource("9_tartn")]
