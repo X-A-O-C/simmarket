@@ -12,6 +12,14 @@ var current_dir: int = dir.LEFT
 @warning_ignore("narrowing_conversion")
 @onready var mnoznik: int = (canvas_modulate.day_lenght_orginal + canvas_modulate.no_change_time_orginal + canvas_modulate.night_lenght_orginal) / 24
 var can_move: bool = true
+
+var currency_values: Dictionary = {
+  "": 0,
+  "K": 3,
+  "M": 6,
+  "B": 9
+  
+}
 func _ready() -> void:
   hour_label.text = str(24 - (int(ceil((canvas_modulate.day_lenght + canvas_modulate.no_change_time + canvas_modulate.night_lenght) / mnoznik))))
 
@@ -49,9 +57,16 @@ func update_hour() -> void:
   hour_label.text = str(24 - (int(ceil((canvas_modulate.day_lenght + canvas_modulate.no_change_time + canvas_modulate.night_lenght) / mnoznik))))
 
 func update_currency() -> void:
-  currency.text = str(int(SaveManager.game_data["currency"])) + "$"
+  for k in currency_values:
+    var v = currency_values[k]
+    if SaveManager.game_data["currency"] / 10 ** v >= 0 and SaveManager.game_data["currency"] / 10 ** v <= 999.99:
+      if v == 0:
+        currency.text = (str(int(SaveManager.game_data["currency"]) / 10 ** v)) + str(k) + " [img width=48 height=48]res://image/MiniAssets/coin.png[/img]"      
+      else:
+        currency.text = ("%0.1f" % (float(SaveManager.game_data["currency"]) / 10 ** v)) + str(k) + " [img width=48 height=48]res://image/MiniAssets/coin.png[/img]"      
+      break
   if Input.is_key_pressed(KEY_Q):
-    SaveManager.game_data["currency"] += 1
+    SaveManager.game_data["currency"] += 10
     SaveManager.save_game()
   elif Input.is_key_pressed(KEY_E):
     SaveManager.game_data["currency"] = 0
