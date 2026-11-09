@@ -185,6 +185,12 @@ position = Vector2(120, -180)
 [node name="7" type="Marker2D" parent="NavigationPoints" unique_id=334299460]
 position = Vector2(168, -180)
 
+[node name="exit" type="Marker2D" parent="NavigationPoints" unique_id=2088484639]
+position = Vector2(-100, -112)
+
+[node name="register" type="Marker2D" parent="NavigationPoints" unique_id=283407978]
+position = Vector2(160, -136)
+
 [node name="--- interactable objects ---" type="Node2D" parent="." unique_id=645056650]
 
 [node name="Cashregister" parent="--- interactable objects ---" unique_id=1026100606 instance=ExtResource("5_brg4d")]
@@ -200,5 +206,7 @@ position = Vector2(-127, -104)
 z_index = 3
 position = Vector2(-100, -130)
 script = ExtResource("8_prb2b")
+npc_spawn_intervall = null
+max_npc_amount = null
 
 [node name="Npc" parent="NPC_spawner" unique_id=281191698 instance=ExtResource("9_tartn")]
